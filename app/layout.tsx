@@ -15,7 +15,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'solo para_Vane',
+  title: 'para_Vane',
   description: 'Una galaxia hecha de amor, solo para Vane.',
   generator: 'v0.app',
 }

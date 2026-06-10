@@ -8,7 +8,7 @@ export function IntroOverlay({ onStart }: IntroOverlayProps) {
   return (
     <section
       className="fixed inset-0 z-10 grid place-items-center p-6"
-      aria-label="Bienvenida a solo para_Vane"
+      aria-label="Bienvenida a para_Vane"
       style={{
         background:
           "radial-gradient(circle at 50% 14%, rgba(120, 90, 255, 0.28), transparent 18rem), radial-gradient(circle at 50% 88%, rgba(255, 61, 112, 0.2), transparent 19rem), linear-gradient(180deg, #0b0524, #05010f 62%, #14062b)",
@@ -34,7 +34,7 @@ export function IntroOverlay({ onStart }: IntroOverlayProps) {
         </p>
 
         <h1 className="relative font-serif text-[clamp(2.35rem,10vw,3rem)] font-semibold leading-none text-[#fdf2ff] text-balance [text-shadow:0_0_18px_rgba(157,123,255,0.55)]">
-          solo para_Vane
+          para_Vane
         </h1>
 
         <HeartConstellation />
