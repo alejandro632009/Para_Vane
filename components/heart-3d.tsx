@@ -39,6 +39,11 @@ const CAMERA_DEFAULT: CameraState = {
 const heartBaseY = (width: number) => (width < 620 ? 0.52 : 0.68)
 const sceneBaseY = (width: number, height: number) => (width < 620 ? height * 0.4 : height * 0.39)
 const heartLightLocalY = (width: number) => (width < 620 ? -52 : -46)
+const heartResponsiveScale = (width: number) => {
+  if (width < 430) return 1.18
+  if (width < 620) return 1.38
+  return 1.78
+}
 
 function projectScenePoint(
   localX: number,
@@ -296,7 +301,7 @@ export function Heart3D({ started }: Heart3DProps) {
       camera.bottom = -viewHeight / 2
       camera.updateProjectionMatrix()
 
-      const responsiveScale = width < 620 ? 2.08 : 1.78
+      const responsiveScale = heartResponsiveScale(width)
       group.scale.setScalar(responsiveScale * current.zoom)
       group.position.y = heartBaseY(width)
       group.position.x = 0
@@ -317,7 +322,7 @@ export function Heart3D({ started }: Heart3DProps) {
 
       const width = window.innerWidth
       const height = window.innerHeight
-      const responsiveScale = width < 620 ? 2.08 : 1.78
+      const responsiveScale = heartResponsiveScale(width)
       const activeScale = startedRef.current ? 1 : 0.72
       const anchor = projectScenePoint(0, heartLightLocalY(width), 0, current, width, height)
       const worldPerPixel = 10 / Math.max(1, height)

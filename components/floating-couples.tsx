@@ -183,7 +183,9 @@ export function FloatingCouples({ visible }: { visible: boolean }) {
       const height = window.innerHeight
       const camera = cameraRef.current
       const center = getHeartCenter(width, height, camera)
-      const mobileScale = width < 620 ? 0.72 : 1
+      const isPhone = width < 430
+      const isMobile = width < 620
+      const mobileScale = isPhone ? 0.48 : isMobile ? 0.6 : 1
       const baseY = orbitLocalY(width)
 
       snapshotRef.current = []
@@ -205,7 +207,9 @@ export function FloatingCouples({ visible }: { visible: boolean }) {
         const front = Math.max(0, Math.min(1, 1.12 - projected.z / 620))
         const depthScale = 0.5 + front * 0.62
         const opacity = 0.24 + front * 0.74
-        const blur = (1 - front) * 1.25
+        const blur = isMobile ? 0 : (1 - front) * 1.25
+        const pinkGlow = isPhone ? 6 + front * 10 : 10 + front * 16
+        const violetGlow = isPhone ? 12 + front * 14 : 22 + front * 28
         const rotate = Math.cos(angle) * item.tilt + Math.sin(time * 1.6 + item.phase) * 2.5
         const widthPx =
           item.size * mobileScale * (0.9 + camera.zoom * 0.1) * (0.78 + front * 0.22)
@@ -214,7 +218,9 @@ export function FloatingCouples({ visible }: { visible: boolean }) {
         node.style.zIndex = front > 0.45 ? "3" : "0"
         image.style.width = `${widthPx}px`
         image.style.opacity = opacity.toFixed(3)
-        image.style.filter = `blur(${blur.toFixed(2)}px) drop-shadow(0 0 ${10 + front * 16}px rgba(255, 65, 130, ${0.28 + front * 0.4})) drop-shadow(0 0 ${22 + front * 28}px rgba(120, 95, 255, ${0.18 + front * 0.22}))`
+        image.style.background = "transparent"
+        image.style.maxWidth = "none"
+        image.style.filter = `${blur > 0 ? `blur(${blur.toFixed(2)}px) ` : ""}drop-shadow(0 0 ${pinkGlow}px rgba(255, 65, 130, ${0.28 + front * 0.4})) drop-shadow(0 0 ${violetGlow}px rgba(120, 95, 255, ${0.18 + front * 0.22}))`
 
         snapshotRef.current.push({ x: projected.x, y: projected.y })
       })
