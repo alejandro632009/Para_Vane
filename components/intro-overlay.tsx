@@ -35,6 +35,10 @@ export function IntroOverlay({ onStart }: IntroOverlayProps) {
 
         <GiftSticker />
 
+        <p className="relative font-serif text-[clamp(1.5rem,6vw,1.85rem)] font-semibold tracking-[0.2em] text-[#ffc4dc] [text-shadow:0_0_22px_rgba(255,77,124,0.65)]">
+          TE AMO
+        </p>
+
         <button
           type="button"
           onClick={onStart}
