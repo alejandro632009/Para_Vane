@@ -1,7 +1,5 @@
 "use client"
 
-import { useEffect, useRef } from "react"
-
 type IntroOverlayProps = {
   onStart: () => void
 }
@@ -63,39 +61,13 @@ export function IntroOverlay({ onStart }: IntroOverlayProps) {
 }
 
 function GiftSticker() {
-  const videoRef = useRef<HTMLVideoElement>(null)
-
-  useEffect(() => {
-    const video = videoRef.current
-    if (!video) return
-
-    video.muted = true
-
-    const play = () => {
-      void video.play().catch(() => {})
-    }
-
-    play()
-    video.addEventListener("loadeddata", play)
-    video.addEventListener("canplay", play)
-
-    return () => {
-      video.removeEventListener("loadeddata", play)
-      video.removeEventListener("canplay", play)
-    }
-  }, [])
-
   return (
-    <video
-      ref={videoRef}
+    <img
       className="relative h-28 w-28 object-contain drop-shadow-[0_8px_16px_rgba(120,90,255,0.4)]"
-      src="/gift.mp4"
-      autoPlay
-      loop
-      muted
-      playsInline
-      preload="auto"
-      aria-label="Sticker animado de regalo"
+      src="/gift.gif"
+      alt="Sticker animado de regalo"
+      loading="eager"
+      decoding="async"
     />
   )
 }
