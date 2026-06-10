@@ -330,7 +330,7 @@ export function Heart3D({ started }: Heart3DProps) {
       group.scale.setScalar(responsiveScale * current.zoom * activeScale * anchor.perspective)
       group.position.x = (anchor.x - width * 0.5) * worldPerPixel
       group.position.y = (height * 0.5 - anchor.y) * worldPerPixel
-      const heartSpin = startedRef.current ? -time * 0.32 : -time * 0.1
+      const heartSpin = startedRef.current ? time * 0.32 : time * 0.1
       group.rotation.y = heartSpin + current.rotation * 0.18 + Math.sin(time * 0.38) * 0.07
       group.rotation.x = -0.1 + current.tilt * 0.24 + Math.sin(time * 0.52) * 0.035
       group.rotation.z = Math.sin(time * 0.44) * 0.025
