@@ -33,15 +33,7 @@ export function IntroOverlay({ onStart }: IntroOverlayProps) {
           Para Vane
         </p>
 
-        <h1 className="relative font-serif text-[clamp(2.35rem,10vw,3rem)] font-semibold leading-none text-[#fdf2ff] text-balance [text-shadow:0_0_18px_rgba(157,123,255,0.55)]">
-          para_Vane
-        </h1>
-
         <GiftSticker />
-
-        <p className="relative max-w-[26ch] text-pretty text-sm leading-relaxed text-[#d8ccff]/90">
-          Toca iniciar para entrar a la galaxia.
-        </p>
 
         <button
           type="button"
