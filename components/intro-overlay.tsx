@@ -8,7 +8,7 @@ export function IntroOverlay({ onStart }: IntroOverlayProps) {
   return (
     <section
       className="fixed inset-0 z-10 grid place-items-center p-6"
-      aria-label="Bienvenida a la galaxia de amor"
+      aria-label="Bienvenida a solo para_Vane"
       style={{
         background:
           "radial-gradient(circle at 50% 14%, rgba(120, 90, 255, 0.28), transparent 18rem), radial-gradient(circle at 50% 88%, rgba(255, 61, 112, 0.2), transparent 19rem), linear-gradient(180deg, #0b0524, #05010f 62%, #14062b)",
@@ -30,11 +30,11 @@ export function IntroOverlay({ onStart }: IntroOverlayProps) {
         />
 
         <p className="relative text-[11px] font-medium uppercase tracking-[0.4em] text-[#c5b3ff]">
-          Para ti
+          Para Vane
         </p>
 
-        <h1 className="relative font-serif text-5xl font-semibold leading-none text-[#fdf2ff] text-balance [text-shadow:0_0_18px_rgba(157,123,255,0.55)]">
-          Galaxy Love
+        <h1 className="relative font-serif text-[clamp(2.35rem,10vw,3rem)] font-semibold leading-none text-[#fdf2ff] text-balance [text-shadow:0_0_18px_rgba(157,123,255,0.55)]">
+          solo para_Vane
         </h1>
 
         <HeartConstellation />

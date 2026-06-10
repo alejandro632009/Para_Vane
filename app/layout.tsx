@@ -15,8 +15,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Amor Eterno',
-  description: 'Una galaxia hecha de amor, solo para ti.',
+  title: 'solo para_Vane',
+  description: 'Una galaxia hecha de amor, solo para Vane.',
   generator: 'v0.app',
 }
 
