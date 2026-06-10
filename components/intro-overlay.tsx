@@ -37,7 +37,7 @@ export function IntroOverlay({ onStart }: IntroOverlayProps) {
           para_Vane
         </h1>
 
-        <HeartConstellation />
+        <GiftSticker />
 
         <p className="relative max-w-[26ch] text-pretty text-sm leading-relaxed text-[#d8ccff]/90">
           Toca iniciar para entrar a la galaxia.
@@ -60,35 +60,16 @@ export function IntroOverlay({ onStart }: IntroOverlayProps) {
   )
 }
 
-function HeartConstellation() {
+function GiftSticker() {
   return (
-    <svg
-      className="relative h-20 w-32 drop-shadow-[0_8px_16px_rgba(120,90,255,0.4)]"
-      viewBox="0 0 160 100"
-      role="img"
-      aria-label="Constelacion en forma de corazon"
-    >
-      <g
-        stroke="rgba(197,179,255,0.7)"
-        strokeWidth="1.2"
-        strokeLinecap="round"
-        fill="none"
-      >
-        <path d="M80 86C40 60 22 44 22 28 22 16 31 8 43 8 53 8 60 14 80 32 100 14 107 8 117 8 129 8 138 16 138 28 138 44 120 60 80 86Z" />
-      </g>
-      <g fill="#fdf2ff">
-        <circle cx="43" cy="8" r="2.4" />
-        <circle cx="117" cy="8" r="2.4" />
-        <circle cx="22" cy="28" r="2" />
-        <circle cx="138" cy="28" r="2" />
-        <circle cx="80" cy="32" r="2.8" />
-        <circle cx="80" cy="86" r="2.6" />
-        <circle cx="51" cy="52" r="1.8" />
-        <circle cx="109" cy="52" r="1.8" />
-      </g>
-      <g fill="#ff6f9c">
-        <circle cx="80" cy="32" r="1.4" />
-      </g>
-    </svg>
+    <video
+      className="relative h-28 w-28 object-contain drop-shadow-[0_8px_16px_rgba(120,90,255,0.4)]"
+      src="/gift.mp4"
+      autoPlay
+      loop
+      muted
+      playsInline
+      aria-label="Sticker animado de regalo"
+    />
   )
 }
